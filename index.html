@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="id" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bayarin - Bayar Tagihan & Isi Pulsa</title>
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- QRCode.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        <!-- NAVBAR -->
+        <nav class="navbar">
+            <div class="logo">
+                <i class="fas fa-wallet"></i>
+                <span>Bayarin</span>
+            </div>
+            <div class="nav-links">
+                <button class="nav-btn active" data-section="dashboard">
+                    <i class="fas fa-home"></i> Beranda
+                </button>
+                <button class="nav-btn" data-section="tagihan">
+                    <i class="fas fa-file-invoice"></i> Tagihan
+                </button>
+                <button class="nav-btn" data-section="spp">
+                    <i class="fas fa-graduation-cap"></i> SPP
+                </button>
+                <button class="nav-btn" data-section="pulsa">
+                    <i class="fas fa-sim-card"></i> Pulsa
+                </button>
+                <button class="nav-btn" data-section="riwayat">
+                    <i class="fas fa-clock-rotate-left"></i> Riwayat
+                </button>
+            </div>
+            <div class="navbar-right">
+                <button class="theme-toggle" id="themeToggle" title="Toggle Theme">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <div class="saldo-badge">
+                    <i class="fas fa-coins"></i>
+                    Saldo: <span id="saldoDisplay">Rp 4.250.000</span>
+                </div>
+            </div>
+        </nav>
+
+        <!-- SECTIONS -->
+        <div id="sections">
+            <section id="section-dashboard" class="section active"></section>
+            <section id="section-tagihan" class="section"></section>
+            <section id="section-spp" class="section"></section>
+            <section id="section-pulsa" class="section"></section>
+            <section id="section-riwayat" class="section"></section>
+        </div>
+
+        <!-- MODAL STRUK -->
+        <div class="modal-overlay" id="strukModal">
+            <div class="modal-box">
+                <button class="modal-close" id="closeModalBtn">&times;</button>
+                <h3><i class="fas fa-receipt"></i> Bukti Pembayaran</h3>
+                <div id="strukContent"></div>
+                <div class="modal-actions">
+                    <button class="btn" id="printStrukBtn"><i class="fas fa-print"></i> Cetak</button>
+                    <button class="btn btn-outline" id="closeModalBtn2">Tutup</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- TOAST -->
+        <div class="toast-container" id="toastContainer"></div>
+    </div>
+
+    <!-- JAVASCRIPT -->
+    <script src="js/data.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
